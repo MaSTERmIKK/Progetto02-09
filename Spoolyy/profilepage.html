@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,39 +26,44 @@
                     fontFamily: {
                         'Roboto': ['Roboto'],
                         'Tele-Marines': ['tele-Marines']
+                    },
+                    backgroundImage: {
+                        'profpic': "url('assets/pictures/nfs-Unbound.png')"
                     }
                 },
             },
         }
     </script>
 </head>
+
 <body>
-    <div id="app" class="flex flex-col items-center justify-center h-screen w-full">
-        <div class=" flex flex-col h-[60%] max-w-7xl">
-            <div id="proPic">
-                <img src="assets/pictures/nfs-Unbound.png" alt="priflepic">
+    <div id="app" class="flex flex-col items-center justify-center font-Roboto">
+        <div class="flex flex-col items-center justify-center min-h-screen space-y-[120px]">
+            <div class="flex justify-center items-center">
+                <img class="h-auto w-[170px] rounded-full object-cover" src="assets/pictures/nfs-Unbound.png" alt="Profile picture">
             </div>
-            <div id="display">
-                <p id="firstname">{{firstname}}</p>
-                <p id="lastname">{{lastname}}</p>
-            </div>
-            <div id="interests">
-    
+            <div class="flex flex-col justify-center items-center w-full">
+                <p id="firstname" class="text-[36px]">First name: {{firstname}}</p>
+                <p id="lastname" class="text-[36px]">Last name: {{lastname}}</p>
+                <p id="id" class="text-[36px]">Your user ID: {{id}}</p>
             </div>
         </div>
     </div>
+
     <script>
-    const app = Vue.createApp({
-        data(){
-            return {
-                firstname: 'Alessio',
-                lastname: 'Simeone'
-            }
-        },
-        methods: {
-            
-        },
-    }).mount('#app')
+        const app = Vue.createApp({
+            data() {
+                return {
+                    firstname: 'Alessio',
+                    lastname: 'Simeone',
+                    id: "000001"
+                }
+            },
+            methods: {
+
+            },
+        }).mount('#app')
     </script>
 </body>
+
 </html>
