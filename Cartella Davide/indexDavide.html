@@ -20,41 +20,41 @@
 
 <body>
     <div class="flex flex-col h-screen w-full bg-slate-200 items-center justify-center">
-        <div id="calcolatrice" class=" flex flex-col items-center h-90 w-72 bg-slate-500 shadow-black shadow-2xl p-4">
+        <div id="calcolatrice" class="border-2 border-black rounded-xl flex flex-col items-center h-auto w-auto bg-slate-500 shadow-black shadow-2xl p-4">
             <h1 class="text-center bold">calcolatrice</h1>
-            <p class="w-full h-12 ml-2 p-2 bg-white" id="mostraCalcolo"></p>
+            <p class="text-lg w-full h-12 ml-2 p-2 bg-white border-black border rounded-lg" id="mostraCalcolo"></p>
             <div id="containerTasti">
 
 
-                <div class="inline-block mt-4 justify-between">
+                <div class="inline-block mt-4 w-full justify-between">
 
-                    <button class="  border-black p-2 border h-8 w-8" id="numero1">1</button>
-                    <button class="  border-black p-2 border h-8 w-8" id="numero2">2</button>
-                    <button class=" border-black p-2 border h-8 w-8" id="numero3">3</button>
+                    <button class="m-2 mt-1 mb-1 rounded-xl border-black p-2 border-2 h-12 w-12" id="numero1">1</button>
+                    <button class=" m-2 mt-1 mb-1 rounded-xl border-black p-2 border-2  h-12 w-12" id="numero2">2</button>
+                    <button class="m-2 mt-1 mb-1 rounded-xl border-black p-2 border-2  h-12 w-12" id="numero3">3</button>
                 </div>
                 <div>
-                    <button class="border-black p-2 border h-8 w-8" id="numero4">4</button>
-                    <button class="border-black p-2 border h-8 w-8" id="numero5">5</button>
-                    <button class="border-black p-2 border h-8 w-8" id="numero6">6</button>
+                    <button class="m-2 mt-1 mb-1 rounded-xl border-black p-2 border-2  h-12 w-12" id="numero4">4</button>
+                    <button class="m-2 mt-1 mb-1 rounded-xl border-black p-2 border-2 h-12 w-12" id="numero5">5</button>
+                    <button class="m-2 mt-1 mb-1 rounded-xl border-black p-2 border-2  h-12 w-12" id="numero6">6</button>
                 </div>
                 <div>
-                    <button class="border-black p-2 border h-8 w-8" id="numero7">7</button>
-                    <button class="border-black p-2 border h-8 w-8" id="numero8">8</button>
-                    <button class="border-black p-2 border h-8 w-8" id="numero9">9</button>
+                    <button class="m-2 mt-1 mb-1 rounded-xl border-black p-2 border-2  h-12 w-12" id="numero7">7</button>
+                    <button class="m-2 mt-1 mb-1 rounded-xl border-black p-2 border-2  h-12 w-12" id="numero8">8</button>
+                    <button class="m-2 mt-1 mb-1 rounded-xl border-black p-2 border-2  h-12 w-12" id="numero9">9</button>
                 </div>
                 <div>
-                    <button class="border-black p-2 border h-8 w-8" id="piu">+</button>
-                    <button class="border-black p-2 border h-8 w-8" id="numero0">0</button>
-                    <button class="border-black p-2 border h-8 w-8" id="meno">-</button>
+                    <button class="m-2 mt-1 mb-1 rounded-xl border-black p-2 border-2 h-12 w-12" id="piu">+</button>
+                    <button class="m-2 mt-1 mb-1 rounded-xl border-black p-2 border-2  h-12 w-12" id="numero0">0</button>
+                    <button class="m-2 mt-1 mb-1 rounded-xl border-black p-2 border-2  h-12 w-12" id="meno">-</button>
                 </div>
                 <div>
-                    <button class="border-black p-2 border h-8 w-8" id="per">x</button>
-                    <button class="border-black p-2 border h-8 w-8" id="uguale">=</button>
-                    <button class="border-black p-2 border h-8 w-8" id="diviso">/</button>
+                    <button class="m-2 mt-1 mb-1 rounded-xl border-black p-2 border-2  h-12 w-12" id="per">x</button>
+                    <button class="m-2 mt-1 mb-1 rounded-xl border-black p-2 border-2  h-12 w-12" id="uguale">=</button>
+                    <button class="m-2 mt-1 mb-1 rounded-xl border-black p-2 border-2  h-12 w-12" id="diviso">/</button>
 
                 </div>
-                <div>
-                    <button class="border-black p-2 border h-8 w-8" id="cancella">C</button>
+                <div class="w-full justify-center place-content-center">
+                    <button class="m-2 mt-1 mb-1 rounded-xl border-black p-2 border-2  h-12 w-12 " id="cancella">C</button>
                 </div>
             </div>
 
@@ -76,84 +76,64 @@
         const per = document.getElementById("per")
         const diviso = document.getElementById("diviso")
         const cancella = document.getElementById("cancella")
-
         const mostraCalcolo = document.getElementById("mostraCalcolo")
 
-
         numero1.addEventListener('click', () => {
-            mostraCalcolo.innerText += 1
+            mostraCalcolo.innerText += 1, " "
             let uno = 1
-
         })
         numero2.addEventListener('click', () => {
             mostraCalcolo.innerText += 2
             let due = 2
-
         })
         numero3.addEventListener('click', () => {
             mostraCalcolo.innerText += 3
-
         })
         numero4.addEventListener('click', () => {
             mostraCalcolo.innerText += 4
-
         })
         numero5.addEventListener('click', () => {
             mostraCalcolo.innerText += 5
-
         })
         numero6.addEventListener('click', () => {
             mostraCalcolo.innerText += 6
-
         })
         numero7.addEventListener('click', () => {
             mostraCalcolo.innerText += 7
-
         })
         numero8.addEventListener('click', () => {
             mostraCalcolo.innerText += 8
-
         })
         numero9.addEventListener('click', () => {
             mostraCalcolo.innerText += 9
-
         })
         numero0.addEventListener('click', () => {
             mostraCalcolo.innerText += 0
-
         })
 
         piu.addEventListener('click', () => {
-            mostraCalcolo.innerText += " + "
-
+            mostraCalcolo.innerText += "+"
         })
         meno.addEventListener('click', () => {
-            mostraCalcolo.innerText += " - "
-
+            mostraCalcolo.innerText += "-"
         })
 
         per.addEventListener('click', () => {
-            mostraCalcolo.innerText += " x "
-
+            mostraCalcolo.innerText += "x"
         })
 
         diviso.addEventListener('click', () => {
-            mostraCalcolo.innerText += " / "
-
+            mostraCalcolo.innerText += "/"
         })
 
-        uguale.addEventListener('click', () => {
+       uguale.addEventListener('click', () => {
             let espressione = mostraCalcolo.innerText
             espressione = espressione.replace(/x/g, '*').replace(/\//g, '/');
             const risultato = eval(espressione)
             mostraCalcolo.innerText = risultato
-
-
-
         })
         cancella.addEventListener('click', () => {
             mostraCalcolo.innerText = " "
-
         })
 
 
