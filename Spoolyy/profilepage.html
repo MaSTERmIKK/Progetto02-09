@@ -37,15 +37,27 @@
 </head>
 
 <body>
-    <div id="app" class="flex flex-col items-center justify-center font-Roboto">
-        <div class="flex flex-col items-center justify-center min-h-screen space-y-[120px]">
+    <div id="app" class="flex flex-col justify-center items-center h-screen bg-offWhite">
+        <div
+            class="flex flex-col items-center justify-between h-[720px] bg-gray-300 shadow-lg w-[960px] rounded-3xl py-36">
             <div class="flex justify-center items-center">
-                <img class="h-auto w-[170px] rounded-full object-cover" src="assets/pictures/nfs-Unbound.png" alt="Profile picture">
+                <img class="h-[170px] w-[170px] rounded-full object-cover" src="assets/pictures/nfs-Unbound.png"
+                    alt="Profile picture">
             </div>
             <div class="flex flex-col justify-center items-center w-full">
-                <p id="firstname" class="text-[36px]">First name: {{firstname}}</p>
-                <p id="lastname" class="text-[36px]">Last name: {{lastname}}</p>
-                <p id="id" class="text-[36px]">Your user ID: {{id}}</p>
+                <div>
+                    <label for="firstname" class=" text-[36px]">First Name:  {{credentials.firstname}}</label>
+                    <input v-if="credentials.firstname == ''" id="playerName" type="text" v-model="credentials.firstname"
+                        class="bg-gray-800 text-white p-2 rounded text-[36px]" placeholder="Enter your first name" />
+                </div>
+                <div>
+                    <label for="lastname" class=" text-[36px]">Last Name:  {{credentials.lastname}}</label>
+                    <input v-if="credentials.lastname == ''" id="playerName" type="text" v-model="credentials.lastname"
+                        class="bg-gray-800 text-white p-2 rounded text-[36px]" placeholder="Enter your last name" />
+                </div>
+                <div>
+                    <label for="id" class=" text-[36px]">Your user ID:  {{credentials.id}}</label>
+                </div>
             </div>
         </div>
     </div>
@@ -54,9 +66,11 @@
         const app = Vue.createApp({
             data() {
                 return {
-                    firstname: 'Alessio',
-                    lastname: 'Simeone',
-                    id: "000001"
+                    credentials: {
+                        firstname: '',
+                        lastname: '',
+                        id: '000001'
+                    }
                 }
             },
             methods: {
