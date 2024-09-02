@@ -47,12 +47,12 @@
             <div class="flex flex-col justify-center items-center w-full">
                 <div>
                     <label for="firstname" class=" text-[36px]">First Name:  {{credentials.firstname}}</label>
-                    <input v-if="credentials.firstname == ''" id="playerName" type="text" v-model="credentials.firstname"
+                    <input id="playerName" type="text" v-model="credentials.firstname"
                         class="bg-gray-800 text-white p-2 rounded text-[36px]" placeholder="Enter your first name" />
                 </div>
                 <div>
                     <label for="lastname" class=" text-[36px]">Last Name:  {{credentials.lastname}}</label>
-                    <input v-if="credentials.lastname == ''" id="playerName" type="text" v-model="credentials.lastname"
+                    <input id="playerName" type="text" v-model="credentials.lastname"
                         class="bg-gray-800 text-white p-2 rounded text-[36px]" placeholder="Enter your last name" />
                 </div>
                 <div>
