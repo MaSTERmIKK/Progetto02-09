@@ -1,95 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Rowdies:wght@300;400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+    </style>
+
 </head>
+
 <body>
-    <div>
-        <h1>calcolatrice</h1>
-        <p id="mostraCalcolo"></p>
-        <button id="numero1">1</button>
-        <button id="numero2">2</button>
-        <button id="numero3">3</button>
-        <button id="numero4">4</button>
-        <button id="numero5">5</button>
-        <button id="numero6">6</button>
-        <button id="numero7">7</button>
-        <button id="numero8">8</button>
-        <button id="numero9">9</button>
-        <button id="numero0">0</button>
-        <button id="piu">+</button>
-        <button id="meno">-</button>
-        <button id="per">x</button>
-        <button id="diviso">/</button>
+    <div class="flex flex-col h-screen w-full bg-slate-200 items-center justify-center">
+        <div id="calcolatrice" class=" flex flex-col items-center h-90 w-72 bg-slate-500 shadow-black shadow-2xl p-4">
+            <h1 class="text-center bold">calcolatrice</h1>
+            <p class="w-full h-12 ml-2 p-2 bg-white" id="mostraCalcolo"></p>
+            <div id="containerTasti">
+
+
+                <div class="inline-block mt-4 justify-between">
+
+                    <button class="  border-black p-2 border h-8 w-8" id="numero1">1</button>
+                    <button class="  border-black p-2 border h-8 w-8" id="numero2">2</button>
+                    <button class=" border-black p-2 border h-8 w-8" id="numero3">3</button>
+                </div>
+                <div>
+                    <button class="border-black p-2 border h-8 w-8" id="numero4">4</button>
+                    <button class="border-black p-2 border h-8 w-8" id="numero5">5</button>
+                    <button class="border-black p-2 border h-8 w-8" id="numero6">6</button>
+                </div>
+                <div>
+                    <button class="border-black p-2 border h-8 w-8" id="numero7">7</button>
+                    <button class="border-black p-2 border h-8 w-8" id="numero8">8</button>
+                    <button class="border-black p-2 border h-8 w-8" id="numero9">9</button>
+                </div>
+                <div>
+                    <button class="border-black p-2 border h-8 w-8" id="piu">+</button>
+                    <button class="border-black p-2 border h-8 w-8" id="numero0">0</button>
+                    <button class="border-black p-2 border h-8 w-8" id="meno">-</button>
+                </div>
+                <div>
+                    <button class="border-black p-2 border h-8 w-8" id="per">x</button>
+                    <button class="border-black p-2 border h-8 w-8" id="uguale">=</button>
+                    <button class="border-black p-2 border h-8 w-8" id="diviso">/</button>
+
+                </div>
+                <div>
+                    <button class="border-black p-2 border h-8 w-8" id="cancella">C</button>
+                </div>
+            </div>
+
+        </div>
     </div>
     <script>
         const numero1 = document.getElementById("numero1")
-        const numero2 = document.getElementById("numero2") 
-        const numero3 = document.getElementById("numero3") 
-        const numero4 = document.getElementById("numero4") 
-        const numero5 = document.getElementById("numero5")  
-        const numero6 = document.getElementById("numero6") 
-        const numero7 = document.getElementById("numero7") 
-        const numero8 = document.getElementById("numero8") 
-        const numero9 = document.getElementById("numero9") 
-        const numero0 = document.getElementById("numero0") 
+        const numero2 = document.getElementById("numero2")
+        const numero3 = document.getElementById("numero3")
+        const numero4 = document.getElementById("numero4")
+        const numero5 = document.getElementById("numero5")
+        const numero6 = document.getElementById("numero6")
+        const numero7 = document.getElementById("numero7")
+        const numero8 = document.getElementById("numero8")
+        const numero9 = document.getElementById("numero9")
+        const numero0 = document.getElementById("numero0")
         const piu = document.getElementById("piu")
-        const meno = document.getElementById("meno") 
-        const per = document.getElementById("per") 
-        const diviso = document.getElementById("diviso") 
-        const risultato = document.getElementById("risultato")
+        const meno = document.getElementById("meno")
+        const per = document.getElementById("per")
+        const diviso = document.getElementById("diviso")
+        const cancella = document.getElementById("cancella")
+
         const mostraCalcolo = document.getElementById("mostraCalcolo")
 
 
-        numero1.addEventListener('click', () =>  {
+        numero1.addEventListener('click', () => {
             mostraCalcolo.innerText += 1
+            let uno = 1
 
         })
-        numero2.addEventListener('click', () =>  {
+        numero2.addEventListener('click', () => {
             mostraCalcolo.innerText += 2
+            let due = 2
 
         })
-        numero3.addEventListener('click', () =>  {
+        numero3.addEventListener('click', () => {
             mostraCalcolo.innerText += 3
 
         })
-        numero4.addEventListener('click', () =>  {
+        numero4.addEventListener('click', () => {
             mostraCalcolo.innerText += 4
 
         })
-        numero5.addEventListener('click', () =>  {
+        numero5.addEventListener('click', () => {
             mostraCalcolo.innerText += 5
 
         })
-        numero6.addEventListener('click', () =>  {
+        numero6.addEventListener('click', () => {
             mostraCalcolo.innerText += 6
 
         })
-        numero7.addEventListener('click', () =>  {
+        numero7.addEventListener('click', () => {
             mostraCalcolo.innerText += 7
 
         })
-        numero8.addEventListener('click', () =>  {
+        numero8.addEventListener('click', () => {
             mostraCalcolo.innerText += 8
 
         })
-        numero9.addEventListener('click', () =>  {
+        numero9.addEventListener('click', () => {
             mostraCalcolo.innerText += 9
 
         })
-        numero0.addEventListener('click', () =>  {
+        numero0.addEventListener('click', () => {
             mostraCalcolo.innerText += 0
 
         })
 
         piu.addEventListener('click', () => {
-            mostraCalcolo.innerText += "+ "
-            
+            mostraCalcolo.innerText += " + "
+
+        })
+        meno.addEventListener('click', () => {
+            mostraCalcolo.innerText += " - "
+
         })
 
+        per.addEventListener('click', () => {
+            mostraCalcolo.innerText += " x "
+
+        })
+
+        diviso.addEventListener('click', () => {
+            mostraCalcolo.innerText += " / "
+
+        })
+
+        uguale.addEventListener('click', () => {
+            let espressione = mostraCalcolo.innerText
+            espressione = espressione.replace(/x/g, '*').replace(/\//g, '/');
+            const risultato = eval(espressione)
+            mostraCalcolo.innerText = risultato
+
+
+
+        })
+        cancella.addEventListener('click', () => {
+            mostraCalcolo.innerText = " "
+
+        })
+
+
+
     </script>
-    
+
 </body>
+
 </html>
