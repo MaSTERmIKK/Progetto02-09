@@ -1,33 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
 <body>
-    <div class="la_casa" fade>
 
-        <div class="numbertext">1 / 3</div>
+    
+        <div class="casa1" fade>
 
-        <img src="img/2im.jpeg" style="width:100%">
+            <div class="numbertext">1 / 3</div>
 
-        <div class="text">Caption Text</div>
+            <img src="img/casaa.jpeg" style="width:100%">
 
-    </div>
+            <div class="text">La casa di Mirko</div>
 
-    <div class=»mySlides fade»>
+        </div>
 
-        <div class="numbertext">2 / 3</div>
+        <div class=»casa1 fade»>
 
-        <img src="img2.jpg" style="width:100%">
+            <div class="numbertext">2 / 3</div>
 
-        <div class="text">Caption Two</div>
+            <img src="img/casab.jpeg" style="width:100%">
 
-    </div>
+            <div class="text">La casa di Davide</div>
 
-    <div class="mySlides fade">
+        </div>
 
-        <div class="numbertext">3 / 3</div>
+        <div class="casa1 fade">
 
-        <img src="img3.jpg" style="width:100%">
+            <div class="numbertext">3 / 3</div>
 
-        <div class="text">Caption Three</div>
+            <img src="img/casac.jpeg" style="width:100%">
 
-    </div>
+            <div class="text">La casa di Alessio</div>
+
+        </div>
+
+   
+    <script>
+        var slideIndex = 0;
+
+        showSlides();
+
+        function showSlides() {
+
+            var i;
+
+            var slides = document.getElementsByClassName("casa1");
+
+            for (i = 0; i < slides.length; i++) {
+
+                slides[i].style.display = "none";
+
+            }
+
+            slideIndex++;
+
+            if (slideIndex > slides.length) { slideIndex = 1 }
+
+            slides[slideIndex - 1].style.display = "block";
+
+            setTimeout(showSlides, 2000);
+
+        }
+    </script>
 </body>
 
 </html>
