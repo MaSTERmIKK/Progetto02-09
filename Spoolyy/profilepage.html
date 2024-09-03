@@ -19,9 +19,9 @@
             theme: {
                 extend: {
                     colors: {
-                        offWhite: '#FAF9F6',
-                        offBlack: '#313639',
-                        dudaCyan: '#c1d6d9'
+                        offwhite: '#FAF9F6',
+                        offblack: '#313639',
+                        dudacyan: '#c1d6d9'
                     },
                     fontFamily: {
                         'Roboto': ['Roboto'],
@@ -37,28 +37,37 @@
 </head>
 
 <body>
-    <div id="app" class="flex flex-col justify-center items-center h-screen bg-offWhite">
+    <div id="app" class="flex flex-col justify-center items-center h-screen bg-offwhite">
         <div
-            class="flex flex-col items-center justify-between h-[720px] bg-gray-300 shadow-lg w-[960px] rounded-3xl py-36">
+            class="flex flex-col items-center justify-center h-[66%] bg-gray-400 shadow-lg shadow-black w-[88%] rounded-3xl space-y-12 max-w-[960px] max-h-[720px] min-w-[720px] min-h-[540px]">
+            <button class="pb-3 hover:translate-y-1 hover:scale-110 duration-300"><a href="home.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+                    </svg></a>
+            </button>
             <div class="flex justify-center items-center">
                 <img class="h-[170px] w-[170px] rounded-full object-cover" src="assets/pictures/nfs-Unbound.png"
                     alt="Profile picture">
             </div>
-            <div class="flex flex-col justify-center items-center w-full">
+            <div class="flex flex-col justify-center items-center w-full space-y-2">
                 <div>
-                    <label for="firstname" class=" text-[36px]">First Name:  {{credentials.firstname}}</label>
-                    <input id="playerName" type="text" v-model="credentials.firstname"
-                        class="bg-gray-800 text-white p-2 rounded text-[36px]" placeholder="Enter your first name" />
+                    <label for="firstname" class=" text-[30px]">First Name: {{credentials.firstname}}</label>
+                    <input v-if="isvisible" id="playerName" type="text" v-model="credentials.firstname"
+                        class="bg-gray-800 text-white p-2 rounded-xl text-[30px]" placeholder="Enter your first name" />
                 </div>
                 <div>
-                    <label for="lastname" class=" text-[36px]">Last Name:  {{credentials.lastname}}</label>
-                    <input id="playerName" type="text" v-model="credentials.lastname"
-                        class="bg-gray-800 text-white p-2 rounded text-[36px]" placeholder="Enter your last name" />
+                    <label for="lastname" class=" text-[30px]">Last Name: {{credentials.lastname}}</label>
+                    <input v-if="isvisible" id="playerName" type="text" v-model="credentials.lastname"
+                        class="bg-gray-800 text-white p-2 rounded-xl text-[30px]" placeholder="Enter your last name" />
                 </div>
                 <div>
-                    <label for="id" class=" text-[36px]">Your user ID:  {{credentials.id}}</label>
+                    <label for="id" class=" text-[30px]">Your user ID: {{credentials.id}}</label>
                 </div>
             </div>
+            <button v-if="isvisible" @click="confirm"
+                class="bg-blue-500 p-3 text-2xl font-semibold rounded-xl text-white hover:shadow-md hover:shadow-black hover:scale-105 duration-300">Confirm</button>
         </div>
     </div>
 
@@ -66,15 +75,23 @@
         const app = Vue.createApp({
             data() {
                 return {
+                    isvisible: true,
                     credentials: {
                         firstname: '',
                         lastname: '',
-                        id: '000001'
+                        id: ''
                     }
                 }
             },
             methods: {
-
+                confirm() {
+                    if (!this.credentials.firstname || !this.credentials.lastname) {
+                        window.alert("Please insert your credentials so you can be assigned a user id")
+                    } else {
+                        this.isvisible = false
+                        this.credentials.id = Math.floor(Math.random() * (999999 - 1 + 1)) + 1;
+                    }
+                }
             },
         }).mount('#app')
     </script>
