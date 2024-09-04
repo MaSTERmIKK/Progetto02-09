@@ -20,45 +20,108 @@
 
 <body>
     <div class="flex flex-col h-screen w-full bg-slate-200 items-center justify-center">
-        <div id="calcolatrice" class="border-2 border-black rounded-xl flex flex-col items-center h-auto w-auto bg-slate-500 shadow-black shadow-2xl p-4">
-            <h1 class="text-center bold">calcolatrice</h1>
-            <p class="text-lg w-full h-12 ml-2 p-2 bg-white border-black border rounded-lg" id="mostraCalcolo"></p>
-            <div id="containerTasti">
+        <div class="flex h-screen w-full bg-slate-200 items-center justify-center">
+            <div id="calcolatrice"
+                class="border border-black rounded-xl flex flex-col items-center h-96 w-60 bg-slate-500 shadow-slate-400 shadow-inner  p-4">
+                <p class="text-lg w-full h-12 p-2 bg-white border-black border rounded-lg shadow-inner shadow-black break-keep"
+                    id="mostraCalcolo"></p>
+
+                <div id="containerTasti">
 
 
-                <div class="inline-block mt-4 w-full justify-between">
+                    <div class="inline-block mt-4 w-full justify-between">
 
-                    <button class="m-2 mt-1 mb-1 rounded-xl border-black p-2 border-2 h-12 w-12" id="numero1">1</button>
-                    <button class=" m-2 mt-1 mb-1 rounded-xl border-black p-2 border-2  h-12 w-12" id="numero2">2</button>
-                    <button class="m-2 mt-1 mb-1 rounded-xl border-black p-2 border-2  h-12 w-12" id="numero3">3</button>
-                </div>
-                <div>
-                    <button class="m-2 mt-1 mb-1 rounded-xl border-black p-2 border-2  h-12 w-12" id="numero4">4</button>
-                    <button class="m-2 mt-1 mb-1 rounded-xl border-black p-2 border-2 h-12 w-12" id="numero5">5</button>
-                    <button class="m-2 mt-1 mb-1 rounded-xl border-black p-2 border-2  h-12 w-12" id="numero6">6</button>
-                </div>
-                <div>
-                    <button class="m-2 mt-1 mb-1 rounded-xl border-black p-2 border-2  h-12 w-12" id="numero7">7</button>
-                    <button class="m-2 mt-1 mb-1 rounded-xl border-black p-2 border-2  h-12 w-12" id="numero8">8</button>
-                    <button class="m-2 mt-1 mb-1 rounded-xl border-black p-2 border-2  h-12 w-12" id="numero9">9</button>
-                </div>
-                <div>
-                    <button class="m-2 mt-1 mb-1 rounded-xl border-black p-2 border-2 h-12 w-12" id="piu">+</button>
-                    <button class="m-2 mt-1 mb-1 rounded-xl border-black p-2 border-2  h-12 w-12" id="numero0">0</button>
-                    <button class="m-2 mt-1 mb-1 rounded-xl border-black p-2 border-2  h-12 w-12" id="meno">-</button>
-                </div>
-                <div>
-                    <button class="m-2 mt-1 mb-1 rounded-xl border-black p-2 border-2  h-12 w-12" id="per">x</button>
-                    <button class="m-2 mt-1 mb-1 rounded-xl border-black p-2 border-2  h-12 w-12" id="uguale">=</button>
-                    <button class="m-2 mt-1 mb-1 rounded-xl border-black p-2 border-2  h-12 w-12" id="diviso">/</button>
+                        <button
+                            class="m-1 mt-1 mb-1 rounded-xl border-slate-700 p-1 border h-10 w-10 shadow-inner shadow-slate-400 hover:bg-slate-500 hover:text-black hover:shadow-inner hover:shadow-black hover:duration-750"
+                            id="numero1">1</button>
+                        <button
+                            class="m-1 mt-1 mb-1 rounded-xl border-slate-700 p-1 border h-10 w-10 shadow-inner shadow-slate-400 hover:bg-slate-500  hover:text-black hover:shadow-inner hover:shadow-black hover:duration-750"
+                            id="numero2">2</button>
+                        <button
+                            class="m-1 mt-1 mb-1 rounded-xl border-slate-700 p-1 border h-10 w-10 shadow-inner shadow-slate-400 hover:bg-slate-500  hover:text-black hover:shadow-inner hover:shadow-black hover:duration-750"
+                            id="numero3">3</button>
+                            <button id="cancellaRisultati"class="m-1 mt-1 mb-1 rounded-xl border-slate-700 p-1 border h-10 w-10 shadow-inner shadow-slate-400 hover:bg-slate-500  hover:text-black hover:shadow-inner hover:shadow-black hover:duration-750"
+                            >Canc</button>
+                    </div>
+                    <div class="inline-block w-full justify-between">
+                        <button
+                            class="m-1 mt-1 mb-1 rounded-xl border-slate-700 p-1 border h-10 w-10 shadow-inner shadow-slate-400 hover:bg-slate-500  hover:text-black hover:shadow-inner hover:shadow-black hover:duration-750"
+                            id="numero4">4</button>
+                        <button
+                            class="m-1 mt-1 mb-1 rounded-xl border-slate-700 p-1 border h-10 w-10 shadow-inner shadow-slate-400 hover:bg-slate-500  hover:text-black hover:shadow-inner hover:shadow-black hover:duration-750"
+                            id="numero5">5</button>
+                        <button
+                            class="m-1 mt-1 mb-1 rounded-xl border-slate-700 p-1 border h-10 w-10 shadow-inner shadow-slate-400 hover:bg-slate-500  hover:text-black hover:shadow-inner hover:shadow-black hover:duration-750""
+                            id="numero6">6</button>
+                            <button id="cambioColor" class="m-1 mt-1 mb-1 rounded-xl border-slate-700 p-1 border h-10 w-10 shadow-inner shadow-slate-400 hover:bg-slate-500  hover:text-black hover:shadow-inner hover:shadow-black hover:duration-750""
+                            >Col</button>
+                    </div>
+                    <div class="inline-block w-full justify-between">
+                        <button
+                            class="m-1 mt-1 mb-1 rounded-xl border-slate-700 p-1 border h-10 w-10 shadow-inner shadow-slate-400 hover:bg-slate-500 hover:text-black hover:shadow-inner hover:shadow-black hover:duration-750"
+                            id="numero7">7</button>
+                        <button
+                            class="m-1 mt-1 mb-1 rounded-xl border-slate-700 p-1 border h-10 w-10 shadow-inner shadow-slate-400 hover:bg-slate-500 hover:text-black hover:shadow-inner hover:shadow-black hover:duration-750"
+                            id="numero8">8</button>
+                        <button
+                            class="m-1 mt-1 mb-1 rounded-xl border-slate-700 p-1 border h-10 w-10 shadow-inner shadow-slate-400 hover:bg-slate-500 hover:text-black hover:shadow-inner hover:shadow-black hover:duration-750"
+                            id="numero9">9</button>
+                            <button id="animazione1" class="m-1 mt-1 mb-1 rounded-xl border-slate-700 p-1 border h-10 w-10 shadow-inner shadow-slate-400 hover:bg-slate-500  hover:text-black hover:shadow-inner hover:shadow-black hover:duration-750""
+                            >A0</button>
+                    </div>
+                    <div class="inline-block  w-full justify-between">
+                        <button
+                            class="m-1 mt-1 mb-1 rounded-xl border-slate-700 p-1 border h-10 w-10 shadow-inner shadow-slate-400 hover:bg-slate-500 hover:text-black hover:shadow-inner hover:shadow-black hover:duration-750"
+                            id="piu">+</button>
+                        <button
+                            class="m-1 mt-1 mb-1 rounded-xl border-slate-700 p-1 border h-10 w-10 shadow-inner shadow-slate-400 hover:bg-slate-500 hover:text-black hover:shadow-inner hover:shadow-black hover:duration-750"
+                            id="numero0">0</button>
+                        <button
+                            class="m-1 mt-1 mb-1 rounded-xl border-slate-700 p-1 border h-10 w-10 shadow-inner shadow-slate-400 hover:bg-slate-500 hover:text-black hover:shadow-inner hover:shadow-black hover:duration-750"
+                            id="meno">-</button>
+                            <button id="animazione2" class="m-1 mt-1 mb-1 rounded-xl border-slate-700 p-1 border h-10 w-10 shadow-inner shadow-slate-400 hover:bg-slate-500  hover:text-black hover:shadow-inner hover:shadow-black hover:duration-750""
+                            >A1</button>
+                    </div>
+                    <div class="inline-block  w-full justify-between">
+                        <button
+                            class="m-1 mt-1 mb-1 rounded-xl border-slate-700 p-1 border h-10 w-10 shadow-inner shadow-slate-400 hover:bg-slate-500 hover:text-black hover:shadow-inner hover:shadow-black hover:duration-750"
+                            id="per">x</button>
+                        <button
+                            class="m-1 mt-1 mb-1 rounded-xl border-slate-700 p-1 border h-10 w-10 shadow-inner shadow-slate-400 hover:bg-slate-500 hover:text-black hover:shadow-inner hover:shadow-black hover:duration-750"
+                            id="uguale">=</button>
+                        <button
+                            class="m-1 mt-1 mb-1 rounded-xl border-slate-700 p-1 border h-10 w-10 shadow-inner shadow-slate-400 hover:bg-slate-500 hover:text-black hover:shadow-inner hover:shadow-black hover:duration-750"
+                            id="diviso">/</button>
+                        <button id="animazione3" class="m-1 mt-1 mb-1 rounded-xl border-slate-700 p-1 border h-10 w-10 shadow-inner shadow-slate-400 hover:bg-slate-500  hover:text-black hover:shadow-inner hover:shadow-black hover:duration-750""
+                            >A2</button>
 
+                    </div>
+                    <div class="inline-block w-full justify-between">
+                        <button
+                            class="m-1 mt-1 mb-1 rounded-xl border-slate-700 p-1 border h-10 w-10 shadow-inner shadow-slate-400 hover:bg-slate-500 hover:text-black hover:shadow-inner hover:shadow-black hover:duration-750"
+                            id="cancella">C</button>
+                        <button
+                            class="m-1 mt-1 mb-1 rounded-xl border-slate-700 p-1 border h-10 w-10 shadow-inner shadow-slate-400 hover:bg-slate-500 hover:text-black hover:shadow-inner hover:shadow-black hover:duration-750"
+                            id="radice"><i>&radic;</i></button>
+                        <button
+                            class="m-1 mt-1 mb-1 rounded-xl border-slate-700 p-1 border h-10 w-10 shadow-inner shadow-slate-400 hover:bg-slate-500 hover:text-black hover:shadow-inner hover:shadow-black hover:duration-750"
+                            id="virgola">.</button>
+                            <button id="animazione5" class="m-1 mt-1 mb-1 rounded-xl border-slate-700 p-1 border h-10 w-10 shadow-inner shadow-slate-400 hover:bg-slate-500  hover:text-black hover:shadow-inner hover:shadow-black hover:duration-750""
+                            >A3</button>
+
+                    </div>
                 </div>
-                <div class="w-full justify-center place-content-center">
-                    <button class="m-2 mt-1 mb-1 rounded-xl border-black p-2 border-2  h-12 w-12 " id="cancella">C</button>
-                </div>
+
             </div>
+            <div id="foglioCalcoli"
+                class="bg-white border-2 h-96 w-60 border-black rounded-xl flex flex-col items-center shadow-black p-4 shadow-inner">
+                <div class="h-screen w-full flex flex-col ">
+                    <p id="calcoliEffettuati"></p>
+                </div>
 
+            </div>
         </div>
+        <a href="home.html">Ritorna</a>
     </div>
     <script>
         const numero1 = document.getElementById("numero1")
@@ -77,6 +140,16 @@
         const diviso = document.getElementById("diviso")
         const cancella = document.getElementById("cancella")
         const mostraCalcolo = document.getElementById("mostraCalcolo")
+        const calcoliEffettuati = document.getElementById("calcoliEffettuati")
+        const uguale = document.getElementById("uguale")
+        const virgola = document.getElementById("virgola")
+        const radice = document.getElementById("radice")
+        const cancellaRisultati = document.getElementById("cancellaRisultati")
+        const cambioColor = document.getElementById("cambioColor")
+        const animazione1 = document.getElementById("animazione1")
+        const animazione2 = document.getElementById("animazione2")
+        const animazione3 = document.getElementById("animazione3")
+        const animazione4 = document.getElementById("animazione4")
 
         numero1.addEventListener('click', () => {
             mostraCalcolo.innerText += 1, " "
@@ -125,16 +198,54 @@
         diviso.addEventListener('click', () => {
             mostraCalcolo.innerText += "/"
         })
+        virgola.addEventListener('click', () => {
+            mostraCalcolo.innerText += "."
+        })
 
-       uguale.addEventListener('click', () => {
+        uguale.addEventListener('click', () => {
             let espressione = mostraCalcolo.innerText
             espressione = espressione.replace(/x/g, '*').replace(/\//g, '/');
-            const risultato = eval(espressione)
+            let risultato = eval(espressione)
             mostraCalcolo.innerText = risultato
+            let rigaCalcolo = document.createElement('p')
+            calcoliEffettuati.appendChild(rigaCalcolo)
+            rigaCalcolo.innerText += risultato
+            let svuota = calcoliEffettuati.getElementsByTagName('p')
+            while (svuota.length > 9) {
+                calcoliEffettuati.removeChild(svuota[0]);
+                console.log("funziona")
+            }
+
+
+        })
+        radice.addEventListener('click', () => { //<!-- controllare quello che restituisce su calcoliEffettuati stabilire numero massimo di numeri dopo la virgola -->
+            let espressione = mostraCalcolo.innerText
+            let risultato = eval(espressione)
+           
+            let trovaRadice = parseFloat(mostraCalcolo.textContent);
+            let radiceQuadrata = Math.sqrt(trovaRadice);
+            mostraCalcolo.innerText = `${radiceQuadrata}`;
+            console.log("Radice di", trovaRadice, "è:", radiceQuadrata);     
+            let rigaCalcolo = document.createElement('p')
+            rigaCalcolo.innerText = risultato
+            calcoliEffettuati.appendChild(rigaCalcolo)
+            rigaCalcolo.innerText = radiceQuadrata
+            const svuota = calcoliEffettuati.getElementsByTagName('p')
+            while (svuota.length > 9) {
+                calcoliEffettuati.removeChild(svuota[0]);
+                console.log("funziona")
+            }
+
+        })
+
+        cancellaRisultati.addEventListener('click', ()=> {
+            calcoliEffettuati.innerText = ""
         })
         cancella.addEventListener('click', () => {
             mostraCalcolo.innerText = " "
         })
+
+
 
 
 
