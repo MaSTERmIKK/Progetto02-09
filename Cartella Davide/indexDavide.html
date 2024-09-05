@@ -40,7 +40,7 @@
                         <button
                             class="m-1 mt-1 mb-1 rounded-xl border-slate-700 p-1 border h-10 w-10 shadow-inner shadow-slate-400 hover:bg-slate-500  hover:text-black hover:shadow-inner hover:shadow-black hover:duration-750"
                             id="numero3">3</button>
-                            <button id="cancellaRisultati"class="m-1 mt-1 mb-1 rounded-xl border-slate-700 p-1 border h-10 w-10 shadow-inner shadow-slate-400 hover:bg-slate-500  hover:text-black hover:shadow-inner hover:shadow-black hover:duration-750"
+                            <button id="cancellaRisultati"class="text-sm m-1 mt-1 mb-1 rounded-xl border-slate-700 p-1 border h-10 w-10 shadow-inner shadow-slate-400 hover:bg-slate-500  hover:text-black hover:shadow-inner hover:shadow-black hover:duration-750"
                             >Canc</button>
                     </div>
                     <div class="inline-block w-full justify-between">
@@ -92,7 +92,7 @@
                         <button
                             class="m-1 mt-1 mb-1 rounded-xl border-slate-700 p-1 border h-10 w-10 shadow-inner shadow-slate-400 hover:bg-slate-500 hover:text-black hover:shadow-inner hover:shadow-black hover:duration-750"
                             id="diviso">/</button>
-                        <button id="animazione3" class="m-1 mt-1 mb-1 rounded-xl border-slate-700 p-1 border h-10 w-10 shadow-inner shadow-slate-400 hover:bg-slate-500  hover:text-black hover:shadow-inner hover:shadow-black hover:duration-750""
+                        <button id="animazione3" class="m-1 mt-1 mb-1 rounded-xl border-slate-700 p-1 border h-10 w-10 shadow-inner shadow-slate-400 hover:bg-slate-500  hover:text-black hover:shadow-inner hover:shadow-black hover:duration-750"
                             >A2</button>
 
                     </div>
@@ -106,7 +106,7 @@
                         <button
                             class="m-1 mt-1 mb-1 rounded-xl border-slate-700 p-1 border h-10 w-10 shadow-inner shadow-slate-400 hover:bg-slate-500 hover:text-black hover:shadow-inner hover:shadow-black hover:duration-750"
                             id="virgola">.</button>
-                            <button id="animazione5" class="m-1 mt-1 mb-1 rounded-xl border-slate-700 p-1 border h-10 w-10 shadow-inner shadow-slate-400 hover:bg-slate-500  hover:text-black hover:shadow-inner hover:shadow-black hover:duration-750""
+                            <button id="animazione5" class="m-1 mt-1 mb-1 rounded-xl border-slate-700 p-1 border h-10 w-10 shadow-inner shadow-slate-400 hover:bg-slate-500  hover:text-black hover:shadow-inner hover:shadow-black hover:duration-750"
                             >A3</button>
 
                     </div>
@@ -150,9 +150,10 @@
         const animazione2 = document.getElementById("animazione2")
         const animazione3 = document.getElementById("animazione3")
         const animazione4 = document.getElementById("animazione4")
+        let tasti = document.getElementsByTagName("button")
 
         numero1.addEventListener('click', () => {
-            mostraCalcolo.innerText += 1, " "
+            mostraCalcolo.innerText += 1
             let uno = 1
         })
         numero2.addEventListener('click', () => {
@@ -236,6 +237,41 @@
                 console.log("funziona")
             }
 
+        })
+        let numeroTasti = 24
+        
+        
+        cambioColor.addEventListener('click', ()=> {
+            
+            if (calcolatrice.classList.contains("bg-slate-800")&& bottone.classList.contains("shadow-yellow-400")){
+                calcolatrice.classList.replace("bg-slate-800", "bg-slate-500")
+                mostraCalcolo.classList.remove("bg-green-300")
+                calcolatrice.classList.remove("text-yellow-400")
+                for(i=0; i<24;i++){
+                bottone = tasti[i] 
+                bottone.classList.replace("shadow-yellow-400","shadow-slate-400")
+                bottone.classList.replace("hover:bg-slate-800", "hover:bg-slate-500")
+                bottone.classList.replace("hover:text-yellow", "hover:text-black")}
+                
+               
+            }else{
+            calcolatrice.classList.replace("bg-slate-500", "bg-slate-800")
+            mostraCalcolo.classList.add("bg-green-300")
+            mostraCalcolo.classList.add("text-black")
+            calcolatrice.classList.add("text-yellow-400")
+            for(i=0; i<24;i++){
+                bottone = tasti[i] 
+                bottone.classList.replace("shadow-slate-400","shadow-yellow-400")
+                bottone.classList.replace("hover:bg-slate-500", "hover:bg-slate-800")
+                bottone.classList.replace("hover:text-black", "hover:text-yellow")
+
+               
+            }
+                
+                console.log(tasti[0])
+            
+          
+            }
         })
 
         cancellaRisultati.addEventListener('click', ()=> {

@@ -5,11 +5,14 @@ al momento si necessita di intervenire nel codice per quanto segue:
 04.09 -stabilito un massimale di 10, dove ogni espressione appena creata, andrà a rimpiazzare quella più vecchia e cancellarla
 
 -delimitare il numero massimo dei numeri in input
+
 -inserire la "," nei testi
 04.09 - inserito il tasto e con annessa funzione
 -inserire la "radice" nei tasti con annessa funzione
 04.09- inserito il tasto con il giusto simbolo, funzione definita, controllare il numero di caratteri che possono avere i valori che finisco sullo storico della calcolatrice.
 -inserire un tasto per svuotare la pagina degli ultimi risultati
+    aggiunto tasto per svuotare il mostra calcoli.
 -dare una responsivita alla pagine in modo che si adatti ai dispostivi (tasto per cambiare tipologia di calcolatrice)
 -animazione ogni tot clic 
 -inserire tasto per cambiare la paletti di colori della calcolatrice
+    05.09 aggiunto tasto che cambia i colori della calcolatrice.
